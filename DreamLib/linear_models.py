@@ -409,10 +409,10 @@ def plot_pred(y_train,y_test,y_train_pred,y_test_pred,index,name_model):
   plt.title(f'Model: {name_model}')
   plt.show()
 
-def plot_pred_detail(y_train,y_test,y_train_pred,y_test_pred,index,name_model,df_score, ic=True):
+def plot_pred_detail(y_train,y_test,y_train_pred,y_test_pred,index,name_model,df_score,y_validation=None,ic=True):
   """
   Plot the prediction of the model in order to compare with the real model
-
+  If y_validation is None this do not represent the value predicte without knowing the real value 
   name_model is a string where values can be:
   * LinearRegression for LinearRegression
   * Ridge for Ridge
@@ -423,16 +423,22 @@ def plot_pred_detail(y_train,y_test,y_train_pred,y_test_pred,index,name_model,df
   * KNeighborsRegressor for KNeighborsRegressor
   * CatBoostRegression for CatBoostRegression
   """
+
   fig, ax = plt.subplots(figsize=(18,8))
   # r2 = df_score.loc[name_model,'r2']
   rmse = df_score.loc[name_model,'rmse']
   y_train = list(y_train)
   date_split = index[len(y_train)]
-  y = y_train + list(y_test)
-  y_p = list(y_train_pred) + list(y_test_pred)
+  if type(y_validation) != type(None):
+    y = y_train + list(y_test) + list(np.repeat(np.nan,y_validation.shape[0]))
+    y_p = list(y_train_pred) + list(y_test_pred) + list(y_validation)
+  else: 
+    y = y_train + list(y_test)
+    y_p = list(y_train_pred) + list(y_test_pred)
   y_plot = ax.plot(index,y,color='c',label='historical values')
   y_pred_plot = ax.plot(index,y_p,color='r',linestyle='dashed',label='predicted values')
   ax.axvline(x = date_split, color = 'b')
+  
 
   #if ic:
     #hypothesis that the errors are normally distributed; IC de 90%
