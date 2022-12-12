@@ -22,8 +22,10 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-sns.set_theme()
+
+sns.set_theme(style="whitegrid")
 plt.rcParams['font.family'] = 'serif'
+
 
   
 ##### REGRESSION FUNCTIONS #####
@@ -422,7 +424,7 @@ def plot_pred_detail(y_train,y_test,y_train_pred,y_test_pred,index,name_model,df
   * CatBoostRegression for CatBoostRegression
   """
   fig, ax = plt.subplots(figsize=(18,8))
-  r2 = df_score.loc[name_model,'r2']
+  # r2 = df_score.loc[name_model,'r2']
   rmse = df_score.loc[name_model,'rmse']
   y_train = list(y_train)
   date_split = index[len(y_train)]
@@ -439,7 +441,7 @@ def plot_pred_detail(y_train,y_test,y_train_pred,y_test_pred,index,name_model,df
   extra = plt.Rectangle(
         (0, 0), 0, 0, fc="w", fill=False, edgecolor="none", linewidth=0
     )
-  scores = (r"$R^2={:.4f}$" + "\n" + r"$RMSE={:.6f}$").format(r2,rmse)
+  scores = (r"$RMSE={:.6f}$").format(rmse)
   plt.legend([extra], [scores], loc='upper center')
 
   plt.xlabel("Date")
