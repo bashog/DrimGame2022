@@ -35,3 +35,9 @@
 | `5_macrodata.ipynb` | Clean of new datas |
 
 ## About features selection
+
+## About features selection with macro data
+
+## About linear models
+
+## About timeseries models
