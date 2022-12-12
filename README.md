@@ -43,8 +43,88 @@
 
 ## About features selection
 
-## About features selection with macro data
+![alt text](img/featureselection.png "Feature selection")
+
+
+
+## About timeseries models
+
+### ARIMA
+
+`ARIMA` is AutoRegressive Integrated Moving Average.
+
+`AR` means autoregressive. It uses the dependent relationship between an observation and some number of lagged observations.
+$$ X_t = c + \phi_1 X_{t-1} + \phi_2 X_{t-2} + ... + \phi_p X_{t-p} + \epsilon_t $$
+
+`I` means integrated. It uses the differencing of raw observations (e.g. subtracting an observation from an observation at the previous time step) in order to make the time series stationary.
+$$ X_t = X_{t-1} + \epsilon_t $$
+
+`MA` means moving average. It uses the dependency between an observation and a residual error from a moving average model applied to lagged observations.
+$$ X_t = c + \epsilon_t + \theta_1 \epsilon_{t-1} + \theta_2 \epsilon_{t-2} + ... + \theta_q \epsilon_{t-q} $$
+
+### ARIMAX
+
+`ARIMAX` is AutoRegressive Integrated Moving Average with exogenous variables.
+
+$$ X_t = c + \phi_1 X_{t-1} + \phi_2 X_{t-2} + ... + \phi_p X_{t-p} + \epsilon_t + \beta_1 Z_{t-1} + \beta_2 Z_{t-2} + ... + \beta_q Z_{t-q} $$ with $Z$ the exogenous variables.
 
 ## About linear models
 
-## About timeseries models
+### Linear Regression
+
+`LinearRegression` fits a linear model with coefficients $w = (w_1, ..., w_p)$ to minimize the residual sum of squares between the observed targets in the dataset, and the targets predicted by the linear approximation. Mathematically it solves a problem of the form:
+
+$$
+\underset{\omega}{\text{min}}||X{\omega}-y||_{2}^{2}
+$$
+
+### Ridge Regression
+
+`Ridge` regression addresses some of the problems of Ordinary Least Squares by imposing a penalty on the size of the coefficients. The ridge coefficients minimize a penalized residual sum of squares:
+$$\min_{w} || X w - y||_2^2 + \alpha ||w||_2^2$$
+
+The complexity parameter $\alpha \ge 0$ controls the amount of shrinkage: the larger the value of $\alpha$, the greater the amount of shrinkage and thus the coefficients become more robust to collinearity.
+
+### Lasso
+
+The `Lasso` is a linear model that estimates sparse coefficients. It is useful in some contexts due to its tendency to prefer solutions with fewer non-zero coefficients, effectively reducing the number of features upon which the given solution is dependent. For this reason, Lasso and its variants are fundamental to the field of compressed sensing. Under certain conditions, it can recover the exact set of non-zero coefficients.
+
+Mathematically, it consists of a linear model with an added regularization term. The objective function to minimize is:
+
+$$\min_{w} { \frac{1}{2n_{\text{samples}}} ||X w - y||_2 ^ 2 + \alpha ||w||_1}$$
+
+### Elastic Net
+
+`ElasticNet` is a linear regression model trained with both $\ell_1$ and $\ell_2$-norm regularization of the coefficients. This combination allows for learning a sparse model where few of the weights are non-zero like Lasso, while still maintaining the regularization properties of Ridge. We control the convex combination of $\ell_1$ and $\ell_2$ using the l1_ratio parameter.
+
+Elastic-net is useful when there are multiple features that are correlated with one another. Lasso is likely to pick one of these at random, while elastic-net is likely to pick both.
+
+A practical advantage of trading-off between Lasso and Ridge is that it allows Elastic-Net to inherit some of Ridge’s stability under rotation.
+
+The objective function to minimize is in this case:
+$$\min_{w} { \frac{1}{2n_{\text{samples}}} ||X w - y||_2 ^ 2 + \alpha \rho ||w||_1 +
+\frac{\alpha(1-\rho)}{2} ||w||_2 ^ 2}$$
+
+The class ElasticNetCV can be used to set the parameters alpha ($\alpha$) and l1_ratio ($\rho$) by cross-validation.
+
+### XGBRegressor
+
+`XGBRegressor` provides a parallel tree boosting. It means that it will train many decision trees at the same time, and it will correct the mistakes of the previously trained decision trees.
+
+### LinearSVR
+
+`LinearSVR` implements support vector regression for the case of a linear kernel. Support vector regression means that the target value is expected to be within the epsilon tube around the prediction. 
+
+$$ \min_{w, \xi} \frac{1}{2} ||w||^2_2 + C \sum_{i=1}^n \xi_i $$
+
+### KNeighborsRegressor
+
+`KNeighborsRegressor` implements learning based on the k nearest neighbors of each query point, where $k$ is an integer value specified by the user. The output is the property value for the object. This value is the average of the values of its $k$ nearest neighbors.
+
+### DecisionTreeRegressor
+
+`DecisionTreeRegressor` is a class capable of performing multi-output regression on a dataset. The goal is to create a model that predicts the value of a target variable by learning simple decision rules inferred from the data features.
+
+### CatBoostRegressor
+
+`CatBoostRegressor` is a gradient boosting on decision trees library with categorical features support out of the box. It is based on gradient boosting algorithm with several improvements like handling categorical features automatically, better handling of numerical features, regularization, and others.
