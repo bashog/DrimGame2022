@@ -103,6 +103,7 @@ def find_arimax_params(y_train,exog=None,d=None,alpha=0.05,seasonal=False):
 
   return model
 
+
 def plot_arimax_fit(model,y_train,y_test,exog_train=None,exog_test=None):
     """
     - Plot the fit and the prediction of the arimax model (with exogenous data or not)
@@ -137,6 +138,10 @@ def plot_arimax_fit(model,y_train,y_test,exog_train=None,exog_test=None):
     
 
 def plot_forecasts(forecasts, title, figsize=(8, 12)):
+    """
+    - Plot the forecasts and the residuals of the model
+    """
+
     x = np.arange(y_train.shape[0] + forecasts.shape[0])
 
     fig, axes = plt.subplots(2, 1, sharex=False, figsize=figsize)
