@@ -30,11 +30,11 @@ def clean_data(data:pd.DataFrame,start:int,period:int,chronique,col_used:None,sp
   X = X.set_index(X.TRIMESTRE)
   X["DR"] = X["DR"].shift(-period//3)
   Y = X.DR.iloc[:-period//3]
+  X = X.drop(columns=["DR","TRIMESTRE","CHRONIQUE"])
   if col_used != None:
     X = X[col_used]
   else:
       X = X.drop(columns=['CD_TY_CLI_RCI_2','CD_ETA_CIV_2','CD_MOD_HABI_2','CD_PROF_3','CD_QUAL_VEH_2'])
-  X = X.drop(columns=["DR","TRIMESTRE","CHRONIQUE"])
   X_validation = X.iloc[-period//3:,:]
   X = X.iloc[:-period//3,:]
 
