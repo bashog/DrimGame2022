@@ -46,6 +46,7 @@ def clean_data(data:pd.DataFrame,start:int,period:int,chronique,col_used:None,sp
     X_train, X_test, y_train, y_test = train_test_split(X,Y,test_size=split,shuffle=False)
   index_train = X_train.index
   index_test = X_test.index
+  index_validation = X_validation.index
 
   # Normalization
   if norm == "Not":
@@ -60,7 +61,7 @@ def clean_data(data:pd.DataFrame,start:int,period:int,chronique,col_used:None,sp
     scaler_validation = MinMaxScaler()
     X_train = pd.DataFrame(scaler_train.fit_transform(X_train),index=index_train,columns=X_train.columns)
     X_test = pd.DataFrame(scaler_test.fit_transform(X_test),index=index_test,columns=X_test.columns)
-    X_validation = pd.DataFrame(scaler_validation.fit_transform(X_validation),index=index_test,columns=X_validation.columns)
+    X_validation = pd.DataFrame(scaler_validation.fit_transform(X_validation),index=index_validation,columns=X_validation.columns)
 
   elif norm == 'StdSca':
     scaler_train = StandardScaler()
@@ -68,7 +69,7 @@ def clean_data(data:pd.DataFrame,start:int,period:int,chronique,col_used:None,sp
     scaler_validation = StandardScaler()
     X_train = pd.DataFrame(scaler_train.fit_transform(X_train),index=index_train,columns=X_train.columns)
     X_test = pd.DataFrame(scaler_test.fit_transform(X_test),index=index_test,columns=X_test.columns)
-    X_validation = pd.DataFrame(scaler_validation.fit_transform(X_validation),index=index_test,columns=X_validation.columns)
+    X_validation = pd.DataFrame(scaler_validation.fit_transform(X_validation),index=index_validation,columns=X_validation.columns)
   
   else:
     print("This norm doesn't exist")
