@@ -2,7 +2,6 @@
 
 ## Context and Purpose of the project
 
-
 ## Structure of the repository
 
 | Folder | Description |
@@ -40,45 +39,9 @@
 | `5.2_timeseries_24.ipynb` | timeseries models to predict the DR of 12 months in 24 months |
 | `5.3_timeseries_36.ipynb` | timeseries models to predict the DR of 12 months in 36 months |
 
-
 ## About features selection
 
 ![alt text](img/featureselection.png "Feature selection")
-
-### Correlation selection
-
-We select the features with a hih correlation with DR and a low correlation between them.
-
-### Low variance selection
-
-We select the features with a low variance.
-
-### Kbest selection
-
-We select the features with the method of Kbest. The algortihm is based on the ANOVA F-value between label/feature for classification tasks.
-
-
-
-## About timeseries models
-
-### ARIMA
-
-`ARIMA` is AutoRegressive Integrated Moving Average.
-
-`AR` means autoregressive. It uses the dependent relationship between an observation and some number of lagged observations.
-$$ X_t = c + \phi_1 X_{t-1} + \phi_2 X_{t-2} + ... + \phi_p X_{t-p} + \epsilon_t $$
-
-`I` means integrated. It uses the differencing of raw observations (e.g. subtracting an observation from an observation at the previous time step) in order to make the time series stationary.
-$$ X_t = X_{t-1} + \epsilon_t $$
-
-`MA` means moving average. It uses the dependency between an observation and a residual error from a moving average model applied to lagged observations.
-$$ X_t = c + \epsilon_t + \theta_1 \epsilon_{t-1} + \theta_2 \epsilon_{t-2} + ... + \theta_q \epsilon_{t-q} $$
-
-### ARIMAX
-
-`ARIMAX` is AutoRegressive Integrated Moving Average with exogenous variables.
-
-$$ X_t = c + \phi_1 X_{t-1} + \phi_2 X_{t-2} + ... + \phi_p X_{t-p} + \epsilon_t + \beta_1 Z_{t-1} + \beta_2 Z_{t-2} + ... + \beta_q Z_{t-q} $$ with $Z$ the exogenous variables.
 
 ## About linear models
 
