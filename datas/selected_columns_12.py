@@ -5,7 +5,7 @@ The columns depends on the chronique type
 
 # TOTALE
 col_totale_corr = ['p95_3', 'mean_7', 'p95_6', 'median_2', 'CD_MOD_HABI_1', 'PIB', 'p90_6', 'p95_2', 'p90_2', 'p90_3', 'p75_7', 'p90_7', 'mean_1', 'mean_6', 'p95_1', 'Tx_cho', 'mean_2']
-col_2_low_var = ['mean_2', 'median_2', 'p5_2', 'p10_2', 'p25_2', 'p75_2', 'p90_2',
+col_totale_low_var = ['mean_2', 'median_2', 'p5_2', 'p10_2', 'p25_2', 'p75_2', 'p90_2',
        'p95_2', 'mean_3', 'median_3', 'p5_3', 'p10_3', 'p25_3', 'p75_3',
        'p90_3', 'p95_3', 'mean_4', 'median_4', 'p75_4', 'p90_4', 'p95_4',
        'mean_5', 'p5_5', 'p10_5', 'p25_5', 'p75_5', 'p90_5', 'p95_5', 'PIB',
