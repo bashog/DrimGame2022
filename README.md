@@ -28,11 +28,18 @@
 | --- | --- |
 | `0_exploration.ipynb` | First exploration of the datas and first test |
 | `1_vizualisation.ipynb` | Plot of the datas |
-| `2_timeseries.ipynb` | Timeseries models |
-| `3.1_features_selection.ipynb` | Features selection with different methods |
-| `3.2_features_selection with macro.ipynb` | Features selection with different methods with new data|
-| `4_linear_models.ipynb` | Linear models |
-| `5_macrodata.ipynb` | Clean of new datas |
+| `2_macrodata.ipynb` | Clean of new datas |
+| `3.1_features_selection_12.ipynb` | Features selection to predict the DR of 12 months in 12 months |
+| `3.2_features_selection_24.ipynb` | Features selection to predict the DR of 12 months in 24 months |
+| `3.3_features_selection_36.ipynb` | Features selection to predict the DR of 12 months in 36 months |
+| `3.4_features_selection with macro.ipynb` | Features selectionwith new macro datas|
+| `4.1_linear_models_12.ipynb` | Linear models to predict the DR of 12 months in 12 months|
+| `4.2_linear_models_24.ipynb` | Linear models to predict the DR of 12 months in 24 months|
+| `4.3_linear_models_36.ipynb` | Linear models to predict the DR of 12 months in 36 months|
+| `5.1_timeseries_12.ipynb` | timeseries models to predict the DR of 12 months in 12 months|
+| `5.2_timeseries_24.ipynb` | timeseries models to predict the DR of 12 months in 24 months |
+| `5.3_timeseries_36.ipynb` | timeseries models to predict the DR of 12 months in 36 months |
+
 
 ## About features selection
 
