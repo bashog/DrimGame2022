@@ -45,6 +45,18 @@
 
 ![alt text](img/featureselection.png "Feature selection")
 
+### Correlation selection
+
+We select the features with a hih correlation with DR and a low correlation between them.
+
+### Low variance selection
+
+We select the features with a low variance.
+
+### Kbest selection
+
+We select the features with the method of Kbest. The algortihm is based on the ANOVA F-value between label/feature for classification tasks.
+
 
 
 ## About timeseries models
