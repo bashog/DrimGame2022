@@ -255,8 +255,7 @@ $$\min_{w} { \frac{1}{2n_{\text{samples}}} ||X w - y||_2 ^ 2 + \alpha ||w||_1}$$
 ### Elastic Net
 
 `ElasticNet` is a linear regression model trained with both $\ell_1$ and $\ell_2$-norm regularization of the coefficients. Elastic-net is useful when there are multiple features that are correlated with one another.
-$$\min_{w} { \frac{1}{2n_{\text{samples}}} ||X w - y||_2 ^ 2 + \alpha \rho ||w||_1 +
-\frac{\alpha(1-\rho)}{2} ||w||_2 ^ 2}$$
+$$\min_{w} { \frac{1}{2n_{\text{samples}}} ||X w - y||_2 ^ 2 + \alpha \rho ||w||_1 + \frac{\alpha(1-\rho)}{2} ||w||_2 ^ 2}$$
 
 ### XGBRegressor
 
