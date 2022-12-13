@@ -2,7 +2,7 @@
 
 ## Context and Purpose of the project
 
-Bank wants to calculate the default risk probability of loan applicants based on their financial history over all other financial institutes
+Bank wants to calculate the default risk probability of loan applicants based on their financial history over all other financial institutes.
 
 Credit Risk parameter forecasting models:
 * `IFRS 9`
