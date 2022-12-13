@@ -40,6 +40,23 @@
 | `5.2_timeseries_24.ipynb` | timeseries models to predict the DR of 12 months in 24 months |
 | `5.3_timeseries_36.ipynb` | timeseries models to predict the DR of 12 months in 36 months |
 
+## About TimeSeries models
+
+### ARIMA
+
+`ARIMA` neans *AutoRegressive Integrated Moving Average*. It is a class of statistical models for analyzing and forecasting time series data. `ARIMA` models are denoted with the notation `ARIMA(p, d, q)`. These three parameters account for seasonality, trend, and noise in data.
+
+- `p` is the order of the AR term. $X_t = \mu + \phi_1 X_{t-1} + \phi_2 X_{t-2} + ... + \phi_p X_{t-p} + \epsilon_t$
+- `d` is the degree of differencing (the number of times the data have had past values subtracted). $\Delta X_t = X_t - X_{t-1}$
+- `q` is the order of the MA term. $X_t = \mu + \epsilon_t + \theta_1 \epsilon_{t-1} + \theta_2 \epsilon_{t-2} + ... + \theta_q \epsilon_{t-q}$
+
+### ARIMAX
+
+`ARIMAX` means *AutoRegressive Integrated Moving Average with eXogenous regressors*. It's an extension of ARIMA that allows to take into account external variables that can have an impact on the time series.
+
+$$ X_t = \mu + \phi_1 X_{t-1} + ... + \phi_p X_{t-p} + \epsilon_t + ... + \theta_q \epsilon_{t-q} + \beta_1 Z_{1,t} + \beta_2 Z_{2,t} + ... $$
+
+
 ## About features selection
 
 ![alt text](img/featureselection.png "Feature selection")
