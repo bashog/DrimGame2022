@@ -106,6 +106,12 @@ $$ \min_{w, \xi} \frac{1}{2} ||w||^2_2 + C \sum_{i=1}^n \xi_i $$
 
 ## Results found
 
+To laucnh a model the code has the following structure :
+
+```python
+
+```
+
 ### CHR2 - 12 months
 
 ![alt text](img/CHR2_12.png "Best model for 12 months prediction for CHR2 portfolio")
