@@ -50,6 +50,89 @@ We build this library in order to not load too much the jupyter notebook.
 | `5.2_timeseries_24.ipynb` | timeseries models to predict the DR of 12 months in 24 months |
 | `5.3_timeseries_36.ipynb` | timeseries models to predict the DR of 12 months in 36 months |
 
+## Results found
+
+To launch a model the code has the following structure for example for `CHR2`, `12 months period`, `the forward sequential period` and `the linear SVR model` :
+
+Firstly we set all features, the `chronique`, the `start`, the `period`, the `norm`, and the `split`.
+
+```python
+chronique=b'CHR2'
+start = 1
+period = 12
+norm = "MinMax"
+split = 0.2
+```
+
+Then we need to clean the data in order to get `X_train`, `X_test`, `y_train`, `y_test` and `X_validation`. Also we set the index and the summary of the model, which allows us to obtain the `rmse`, the `mse`, the `mae` and the `r2`.
+
+```python
+X_train, X_test, y_train, y_test,X_validation = clean_data(data,start,chronique=chronique,period=period,col_used=cl.col_2_seq_for,split=split,norm=norm)
+index = pd.concat([X_train, X_test,X_validation], axis=1).index
+summary = summary_ml(X_train,y_train,X_test,y_test,models=['svr'])
+```
+
+Finally we build the plot to see ou prediction.
+
+```python
+for i in range(summary.shape[0]): 
+  y_train_pred = y_pred(X_train,y_train,X_train,y_train,model=summary.index[i])
+  y_test_pred = y_pred(X_train,y_train,X_test,y_test,model=summary.index[i])
+  y_validation_pred = y_pred(X_train,y_train,X_validation,y_test=False,model=summary.index[i])
+  plot_pred_detail(y_train,y_test,y_train_pred,y_test_pred,index,name_model=summary.index[i],y_validation=y_validation_pred,period=period,df_score=summary)
+```
+
+By applying to all chronique we obtain the following plot.
+
+### CHR2
+
+For the CHR2 portfolio we obtain the following predictions for `12`, `24` and `36` months :
+
+| ![alt text](img/CHR2_12.png "Best model for 12 months prediction for CHR2 portfolio") |
+|:--:|
+| *Best model for 12 months prediction for CHR2 portfolio* |
+
+| ![alt text](img/CHR2_24.png "Best model for 24 months prediction for CHR2 portfolio")|
+|:--:|
+| *Best model for 24 months prediction for CHR2 portfolio* |
+
+| ![alt text](img/CHR2_36.png "Best model for 36 months prediction for CHR2 portfolio")|
+|:--:|
+| *Best model for 36 months prediction for CHR2 portfolio* |
+
+### CHR8
+
+For the CHR8 portfolio we obtain the following predictions for `12`, `24` and `36` months :
+
+| ![alt text](img/CHR8_12.png "Best model for 12 months prediction for CHR8 portfolio") |
+|:--:|
+| *Best model for 12 months prediction for CHR8 portfolio* |
+
+| ![alt text](img/CHR8_24.png "Best model for 24 months prediction for CHR8 portfolio")|
+|:--:|
+| *Best model for 24 months prediction for CHR8 portfolio* |
+
+| ![alt text](img/CHR8_36.png "Best model for 36 months prediction for CHR8 portfolio")|
+|:--:|
+| *Best model for 36 months prediction for CHR8 portfolio* |
+
+### CHR Total
+
+For the CHR Totale portfolio we obtain the following predictions for `12`, `24` and `36` months :
+
+| ![alt text](img/CHRTotale_12.png "Best model for 12 months prediction for CHR Total portfolio") |
+|:--:|
+| *Best model for 12 months prediction for CHR Total portfolio* |
+
+| ![alt text](img/CHRTotale_24.png "Best model for 24 months prediction for CHR Total portfolio")|
+|:--:|
+| *Best model for 24 months prediction for CHR Total portfolio* |
+
+| ![alt text](img/CHRTOTALE_36.png "Best model for 36 months prediction for CHR Total portfolio")|
+|:--:|
+| *Best model for 36 months prediction for CHR Total portfolio* |
+
+
 ## About TimeSeries models
 
 ### ARIMA
@@ -133,85 +216,3 @@ $$\min_{w, \xi} \frac{1}{2} ||w||^2_2 + C \sum_{i=1}^n \xi_i$$
 ### CatBoostRegressor
 
 `CatBoostRegressor` is a gradient boosting on decision trees library with categorical features support out of the box. It is based on gradient boosting algorithm with several improvements like handling categorical features automatically, better handling of numerical features, regularization, and others.
-
-## Results found
-
-To launch a model the code has the following structure for example for `CHR2`, `12 months period`, `the forward sequential period` and `the linear SVR model` :
-
-Firstly we set all features, the `chronique`, the `start`, the `period`, the `norm`, and the `split`.
-
-```python
-chronique=b'CHR2'
-start = 1
-period = 12
-norm = "MinMax"
-split = 0.2
-```
-
-Then we need to clean the data in order to get `X_train`, `X_test`, `y_train`, `y_test` and `X_validation`. Also we set the index and the summary of the model, which allows us to obtain the `rmse`, the `mse`, the `mae` and the `r2`.
-
-```python
-X_train, X_test, y_train, y_test,X_validation = clean_data(data,start,chronique=chronique,period=period,col_used=cl.col_2_seq_for,split=split,norm=norm)
-index = pd.concat([X_train, X_test,X_validation], axis=1).index
-summary = summary_ml(X_train,y_train,X_test,y_test,models=['svr'])
-```
-
-Finally we build the plot to see ou prediction.
-
-```python
-for i in range(summary.shape[0]): 
-  y_train_pred = y_pred(X_train,y_train,X_train,y_train,model=summary.index[i])
-  y_test_pred = y_pred(X_train,y_train,X_test,y_test,model=summary.index[i])
-  y_validation_pred = y_pred(X_train,y_train,X_validation,y_test=False,model=summary.index[i])
-  plot_pred_detail(y_train,y_test,y_train_pred,y_test_pred,index,name_model=summary.index[i],y_validation=y_validation_pred,period=period,df_score=summary)
-```
-
-By applying to all chronique we obtain the following plot.
-
-### CHR2
-
-For the CHR2 portfolio we obtain the following predictions for `12`, `24` and `36` months :
-
-| ![alt text](img/CHR2_12.png "Best model for 12 months prediction for CHR2 portfolio") |
-|:--:|
-| *Best model for 12 months prediction for CHR2 portfolio* |
-
-| ![alt text](img/CHR2_24.png "Best model for 24 months prediction for CHR2 portfolio")|
-|:--:|
-| *Best model for 24 months prediction for CHR2 portfolio* |
-
-| ![alt text](img/CHR2_36.png "Best model for 36 months prediction for CHR2 portfolio")|
-|:--:|
-| *Best model for 36 months prediction for CHR2 portfolio* |
-
-### CHR8
-
-For the CHR8 portfolio we obtain the following predictions for `12`, `24` and `36` months :
-
-| ![alt text](img/CHR8_12.png "Best model for 12 months prediction for CHR8 portfolio") |
-|:--:|
-| *Best model for 12 months prediction for CHR8 portfolio* |
-
-| ![alt text](img/CHR8_24.png "Best model for 24 months prediction for CHR8 portfolio")|
-|:--:|
-| *Best model for 24 months prediction for CHR8 portfolio* |
-
-| ![alt text](img/CHR8_36.png "Best model for 36 months prediction for CHR8 portfolio")|
-|:--:|
-| *Best model for 36 months prediction for CHR8 portfolio* |
-
-### CHR Total
-
-For the CHR Totale portfolio we obtain the following predictions for `12`, `24` and `36` months :
-
-| ![alt text](img/CHRTotale_12.png "Best model for 12 months prediction for CHR Total portfolio") |
-|:--:|
-| *Best model for 12 months prediction for CHR Total portfolio* |
-
-| ![alt text](img/CHRTotale_24.png "Best model for 24 months prediction for CHR Total portfolio")|
-|:--:|
-| *Best model for 24 months prediction for CHR Total portfolio* |
-
-| ![alt text](img/CHRTOTALE_36.png "Best model for 36 months prediction for CHR Total portfolio")|
-|:--:|
-| *Best model for 36 months prediction for CHR Total portfolio* |
