@@ -10,6 +10,37 @@ Credit Risk parameter forecasting models:
 
 Then the main goal is to `predict the annual default rate` for different time horizons within `portfolio of loans` intended for the purchase of automobiles by retail counterparty. The different time horizons are `12`, `24` and `36` months.
 
+## Table of Contents
+
+
+- [Drim Game 2022](#drim-game-2022)
+  - [Context and Purpose of the project](#context-and-purpose-of-the-project)
+  - [Table of Contents](#table-of-contents)
+  - [Structure of the repository](#structure-of-the-repository)
+  - [DreamLib structure](#dreamlib-structure)
+  - [Notebooks structure](#notebooks-structure)
+  - [Results found](#results-found)
+    - [CHR2](#chr2)
+    - [CHR8](#chr8)
+    - [CHR Total](#chr-total)
+  - [About TimeSeries models](#about-timeseries-models)
+    - [ARIMA](#arima)
+    - [ARIMAX](#arimax)
+  - [About features selection](#about-features-selection)
+    - [Unsupervised feature selection](#unsupervised-feature-selection)
+    - [Wrapper methods](#wrapper-methods)
+    - [Filter methods](#filter-methods)
+  - [About linear models](#about-linear-models)
+    - [Linear Regression](#linear-regression)
+    - [Ridge Regression](#ridge-regression)
+    - [Lasso](#lasso)
+    - [Elastic Net](#elastic-net)
+    - [XGBRegressor](#xgbregressor)
+    - [LinearSVR](#linearsvr)
+    - [KNeighborsRegressor](#kneighborsregressor)
+    - [DecisionTreeRegressor](#decisiontreeregressor)
+    - [CatBoostRegressor](#catboostregressor)
+
 ## Structure of the repository
 
 | Folders | Description |
