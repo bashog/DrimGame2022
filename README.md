@@ -126,34 +126,47 @@ for i in range(summary.shape[0]):
 
 By applying to all chronique we obtain the following plot.
 
-### CHR2 - 12 months
+### CHR2
+
+For the CHR2 portfolio we obtain the following predictions for `12`, `24` and `36` months :
+
+#### 12 months
 
 ![alt text](img/CHR2_12.png "Best model for 12 months prediction for CHR2 portfolio")
 
-### CHR8 - 12 months
-
-![alt text](img/CHR8_12.png "Best model for 12 months prediction for CHR8 portfolio")
-
-### CHR Total - 12 months
-
-![alt text](img/CHRTotale_12.png "Best model for 12 months prediction for CHR Total portfolio")
-
-### CHR2 - 24 months
+#### 24 months
 
 ![alt text](img/CHR2_24.png "Best model for 24 months prediction for CHR2 portfolio")
 
-### CHR8 - 24 months
-
-![alt text](img/CHR8_24.png "Best model for 24 months prediction for CHR2 portfolio")
-
-### CHR2 - 36 months
+#### 36 months
 
 ![alt text](img/CHR2_36.png "Best model for 36 months prediction for CHR2 portfolio")
 
-### CHR8 - 36 months
+### CHR8
+
+For the CHR8 portfolio we obtain the following predictions for `12`, `24` and `36` months :
+
+#### 12 months
+
+![alt text](img/CHR8_12.png "Best model for 12 months prediction for CHR8 portfolio")
+
+#### 24 months
+
+![alt text](img/CHR8_24.png "Best model for 24 months prediction for CHR2 portfolio")
+
+#### 36 months
 
 ![alt text](img/CHR8_36.png "Best model for 36 months prediction for CHR8 portfolio")
 
-### CHR Total - 36 months
+
+### CHR Total
+
+For the CHR8 portfolio we obtain the following predictions for `12`, `24` and `36` months :
+
+#### 12 months
+
+![alt text](img/CHRTotale_12.png "Best model for 12 months prediction for CHR Total portfolio")
+
+#### 36 months
 
 ![alt text](img/CHRTOTALE_36.png "Best model for 36 months prediction for CHR Total portfolio")
