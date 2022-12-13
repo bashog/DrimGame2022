@@ -135,6 +135,8 @@ $$ \min_{w, \xi} \frac{1}{2} ||w||^2_2 + C \sum_{i=1}^n \xi_i $$
 
 To laucnh a model the code has the following structure for example for `CHR2`, `12 months period`, `the forward sequential period` and `the linear SVR model` :
 
+Firstly we set all features, the `chronique`, the `start`, the `period`, the `norm`, and the `split`.
+
 ```python
 chronique=b'CHR2'
 start = 1
@@ -143,11 +145,15 @@ norm = "MinMax"
 split = 0.2
 ```
 
+Then we need to clean the data in order to get `X_train`, `X_test`, `y_train`, `y_test` and `X_validation`. Also we set the index and the summary of the model, which allows us to obtain the `rmse`, the `mse`, the `mae` and the `r2`.
+
 ```python
 X_train, X_test, y_train, y_test,X_validation = clean_data(data,start,chronique=chronique,period=period,col_used=cl.col_2_seq_for,split=split,norm=norm)
 index = pd.concat([X_train, X_test,X_validation], axis=1).index
 summary = summary_ml(X_train,y_train,X_test,y_test,models=['svr'])
 ```
+
+Finally we build the plot to see ou prediction.
 
 ```python
 for i in range(summary.shape[0]): 
