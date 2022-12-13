@@ -99,6 +99,17 @@ For the CHR2 portfolio we obtain the following predictions for `12`, `24` and `3
 |:--:|
 | *Best model for 36 months prediction for CHR2 portfolio* |
 
+Here is the racpitulative table of predictions :
+
+| Date | 12 months | 24 months | 36 months |
+| --- | --- | --- | --- |
+| Real Q1 2016| 0,25% |  |  |
+| Real Q1 2016| 0,249% |  |  |
+| Real Q1 2015|  | 0,25% |  |
+| Real Q1 2015|  | 0,20% |  |
+| Real Q1 2014|  |  | 0,25% |
+| Real Q1 2014|  |  | 0,2169% |
+
 ### CHR8
 
 For the CHR8 portfolio we obtain the following predictions for `12`, `24` and `36` months :
