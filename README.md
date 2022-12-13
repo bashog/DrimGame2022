@@ -172,47 +172,46 @@ By applying to all chronique we obtain the following plot.
 
 For the CHR2 portfolio we obtain the following predictions for `12`, `24` and `36` months :
 
-#### 12 months
+| ![alt text](img/CHR2_12.png "Best model for 12 months prediction for CHR2 portfolio") |
+|:--:|
+| *Best model for 12 months prediction for CHR2 portfolio* |
 
-![alt text](img/CHR2_12.png "Best model for 12 months prediction for CHR2 portfolio")
+| ![alt text](img/CHR2_24.png "Best model for 24 months prediction for CHR2 portfolio")|
+|:--:|
+| *Best model for 24 months prediction for CHR2 portfolio* |
 
-#### 24 months
-
-![alt text](img/CHR2_24.png "Best model for 24 months prediction for CHR2 portfolio")
-
-#### 36 months
-
-![alt text](img/CHR2_36.png "Best model for 36 months prediction for CHR2 portfolio")
+| ![alt text](img/CHR2_36.png "Best model for 36 months prediction for CHR2 portfolio")|
+|:--:|
+| *Best model for 36 months prediction for CHR2 portfolio* |
 
 ### CHR8
 
 For the CHR8 portfolio we obtain the following predictions for `12`, `24` and `36` months :
 
-#### 12 months
+| ![alt text](img/CHR8_12.png "Best model for 12 months prediction for CHR8 portfolio") |
+|:--:|
+| *Best model for 12 months prediction for CHR8 portfolio* |
 
-![alt text](img/CHR8_12.png "Best model for 12 months prediction for CHR8 portfolio")
+| ![alt text](img/CHR8_24.png "Best model for 24 months prediction for CHR8 portfolio")|
+|:--:|
+| *Best model for 24 months prediction for CHR8 portfolio* |
 
-#### 24 months
-
-![alt text](img/CHR8_24.png "Best model for 24 months prediction for CHR2 portfolio")
-
-#### 36 months
-
-![alt text](img/CHR8_36.png "Best model for 36 months prediction for CHR8 portfolio")
-
+| ![alt text](img/CHR8_36.png "Best model for 36 months prediction for CHR8 portfolio")|
+|:--:|
+| *Best model for 36 months prediction for CHR8 portfolio* |
 
 ### CHR Total
 
 For the CHR Totale portfolio we obtain the following predictions for `12`, `24` and `36` months :
 
-#### 12 months
+| ![alt text](img/CHRTotale_12.png "Best model for 12 months prediction for CHR Total portfolio") |
+|:--:|
+| *Best model for 12 months prediction for CHR Total portfolio* |
 
-![alt text](img/CHRTotale_12.png "Best model for 12 months prediction for CHR Total portfolio")
+| ![alt text](img/CHRTotale_24.png "Best model for 24 months prediction for CHR Total portfolio")|
+|:--:|
+| *Best model for 24 months prediction for CHR Total portfolio* |
 
-#### 24 months
-
-![alt text](img/CHRTotale_24.png "Best model for 12 months prediction for CHR Total portfolio")
-
-#### 36 months
-
-![alt text](img/CHRTOTALE_36.png "Best model for 36 months prediction for CHR Total portfolio")
+| ![alt text](img/CHRTOTALE_36.png "Best model for 36 months prediction for CHR Total portfolio")|
+|:--:|
+| *Best model for 36 months prediction for CHR Total portfolio* |
