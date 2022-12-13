@@ -410,7 +410,7 @@ def plot_pred(y_train,y_test,y_train_pred,y_test_pred,index,name_model):
   plt.title(f'Model: {name_model}')
   plt.show()
 
-def plot_pred_detail(y_train,y_test,y_train_pred,y_test_pred,index,name_model,df_score,y_validation=None,ic=True):
+def plot_pred_detail(y_train,y_test,y_train_pred,y_test_pred,index,name_model,df_score,period=None,y_validation=None,ic=True):
   """
   Plot the prediction of the model in order to compare with the real model
   If y_validation is None this do not represent the value predicte without knowing the real value 
@@ -433,7 +433,7 @@ def plot_pred_detail(y_train,y_test,y_train_pred,y_test_pred,index,name_model,df
   if type(y_validation) != type(None):
     y = y_train + list(y_test) + list(np.repeat(np.nan,y_validation.shape[0]))
     y_p = list(y_train_pred) + list(y_test_pred) + list(y_validation)
-    ax.axvline(x = index[-1], color = 'r')
+    ax.axvline(x = index[-period//3], color = 'r')
   else: 
     y = y_train + list(y_test)
     y_p = list(y_train_pred) + list(y_test_pred)
