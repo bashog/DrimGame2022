@@ -2,6 +2,14 @@
 
 ## Context and Purpose of the project
 
+Bank wants to calculate the default risk probability of loan applicants based on their financial history over all other financial institutes
+
+Credit Risk parameter forecasting models:
+* `IFRS 9`
+* `Credit-stress test systems`
+
+Then the main goal is to `predict the annual default rate` for different time horizons within `portfolio of loans` intended for the purchase of automobiles by retail counterparty. The different time horizons are `12`, `24` and `36` months.
+
 ## Structure of the repository
 
 | Folders | Description |
@@ -21,6 +29,8 @@
 | `processing_datas.py` | contains the preprocessing functions to clean the datas |
 | `timeseries.py` | models based on the timeseries theory |
 | `visualization.py` | functions to plot the datas |
+
+We build this library in order to not load too much the jupyter notebook.
 
 ## Notebooks structure
 
@@ -131,9 +141,15 @@ start = 1
 period = 12
 norm = "MinMax"
 split = 0.2
+```
+
+```python
 X_train, X_test, y_train, y_test,X_validation = clean_data(data,start,chronique=chronique,period=period,col_used=cl.col_2_seq_for,split=split,norm=norm)
 index = pd.concat([X_train, X_test,X_validation], axis=1).index
 summary = summary_ml(X_train,y_train,X_test,y_test,models=['svr'])
+```
+
+```python
 for i in range(summary.shape[0]): 
   y_train_pred = y_pred(X_train,y_train,X_train,y_train,model=summary.index[i])
   y_test_pred = y_pred(X_train,y_train,X_test,y_test,model=summary.index[i])
