@@ -106,14 +106,22 @@ $$ \min_{w, \xi} \frac{1}{2} ||w||^2_2 + C \sum_{i=1}^n \xi_i $$
 
 ## Results found
 
-### CHR2 - 36 months
+### CHR2 - 12 months
 
-![alt text](img/CHR2-36.png "Best model for 36 months prediction for CHR2 portfolio")
+![alt text](img/CHR2_12.png "Best model for 12 months prediction for CHR2 portfolio")
 
-### CHR8 - 36 months
+### CHR8 - 12 months
 
-![alt text](img/CHR8-36.png "Best model for 36 months prediction for CHR8 portfolio")
+![alt text](img/CHR8_12.png "Best model for 12 months prediction for CHR8 portfolio")
 
-### CHR Total - 36 months
+### CHR Total - 12 months
 
-![alt text](img/CHR-total-36.png "Best model for 36 months prediction for CHR Total portfolio")
+![alt text](img/CHRTotale_12.png "Best model for 12 months prediction for CHR Total portfolio")
+
+### CHR2 - 12 months
+
+![alt text](img/CHR2_24.png "Best model for 24 months prediction for CHR2 portfolio")
+
+### CHR8 - 12 months
+
+![alt text](img/CHR8_24.png "Best model for 24 months prediction for CHR2 portfolio")
