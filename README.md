@@ -103,3 +103,17 @@ $$ \min_{w, \xi} \frac{1}{2} ||w||^2_2 + C \sum_{i=1}^n \xi_i $$
 ### CatBoostRegressor
 
 `CatBoostRegressor` is a gradient boosting on decision trees library with categorical features support out of the box. It is based on gradient boosting algorithm with several improvements like handling categorical features automatically, better handling of numerical features, regularization, and others.
+
+## Results found
+
+### CHR2 - 36 months
+
+![alt text](img/CHR2-36.png "Best model for 36 months prediction for CHR2 portfolio")
+
+### CHR8 - 36 months
+
+![alt text](img/CHR8-36.png "Best model for 36 months prediction for CHR8 portfolio")
+
+### CHR Total - 36 months
+
+![alt text](img/CHR-total-36.png "Best model for 36 months prediction for CHR Total portfolio")
