@@ -161,7 +161,7 @@ For the CHR8 portfolio we obtain the following predictions for `12`, `24` and `3
 
 ### CHR Total
 
-For the CHR8 portfolio we obtain the following predictions for `12`, `24` and `36` months :
+For the CHR Totale portfolio we obtain the following predictions for `12`, `24` and `36` months :
 
 #### 12 months
 
