@@ -102,7 +102,7 @@ index = pd.concat([X_train, X_test,X_validation], axis=1).index
 summary = summary_ml(X_train,y_train,X_test,y_test,models=['svr'])
 ```
 
-Finally we build the plot to see ou prediction.
+Finally we build the plot to see our prediction.
 
 ```python
 for i in range(summary.shape[0]): 
