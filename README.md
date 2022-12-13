@@ -14,7 +14,6 @@ Then the main goal is to `predict the annual default rate` for different time ho
 
 | Folders | Description |
 | --- | --- |
-| `basic_exploration` | First exploration |
 | `datas` | Differents data sources |
 | `DreamLib` | Python scripts used in the Notebook |
 | `notebooks` | Jupyter Notebooks |
