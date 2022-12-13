@@ -4,12 +4,13 @@
 
 ## Structure of the repository
 
-| Folder | Description |
+| Folders | Description |
 | --- | --- |
 | `basic_exploration` | First exploration |
 | `datas` | Differents data sources |
 | `DreamLib` | Python scripts used in the Notebook |
 | `notebooks` | Jupyter Notebooks |
+| `img` | Images used in the README |
 
 ## DreamLib structure
 
@@ -23,7 +24,7 @@
 
 ## Notebooks structure
 
-| Files | Description |
+| Notebooks | Description |
 | --- | --- |
 | `0_exploration.ipynb` | First exploration of the datas and first test |
 | `1_vizualisation.ipynb` | Plot of the datas |
@@ -42,6 +43,22 @@
 ## About features selection
 
 ![alt text](img/featureselection.png "Feature selection")
+
+### Unsupervised feature selection
+
+- `Low variance filter` : drop features with high multicollinearity and with low variance (low information content)
+- `Tree based feature selection` : Select features based on the importance weights of an extra-trees classifier. The higher, the more important the feature. The importance of a feature is computed as the (normalized) total reduction of the criterion brought by that feature. It is also known as the Gini importance.
+
+### Wrapper methods
+
+- `Backward selection` : Select features by recursively considering smaller and smaller sets of features. The importance of each feature is measured by a score function; the linear regression model is used to compute the score function.
+- `Forward selection` :  Select features by recursively considering larger and larger sets of features. The importance of each feature is measured by a score function; the linear regression model is used to compute the score function.
+- `Recursive feature elimination` : Select features by recursively considering smaller and smaller sets of features. The importance of each feature is measured by a score function; the linear regression model is used to compute the score function.
+
+### Filter methods
+
+- `Correlation analysis` : keep features with high correlation with the target and low correlation with between them
+- `K-best features` : keep the k best features according to a statistical test; it's f_regression for us (linear regression)
 
 ## About linear models
 
