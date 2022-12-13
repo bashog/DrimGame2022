@@ -212,4 +212,4 @@ For the CHR Totale portfolio we obtain the following predictions for `12`, `24` 
 
 #### 36 months
 
-![alt text](img/CHRTotale_36.png "Best model for 36 months prediction for CHR Total portfolio")
+![alt text](img/CHRTOTALE_36.png "Best model for 36 months prediction for CHR Total portfolio")
