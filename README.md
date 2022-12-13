@@ -106,7 +106,7 @@ $$ \min_{w, \xi} \frac{1}{2} ||w||^2_2 + C \sum_{i=1}^n \xi_i $$
 
 ## Results found
 
-To laucnh a model the code has the following structure for example for CHR2, 12 months period, the forward sequential period and the linear SVR model :
+To laucnh a model the code has the following structure for example for `CHR2`, `12 months period`, `the forward sequential period` and `the linear SVR model` :
 
 ```python
 chronique=b'CHR2'
