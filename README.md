@@ -120,7 +120,7 @@ $$\min_{w} { \frac{1}{2n_{\text{samples}}} ||X w - y||_2 ^ 2 + \alpha \rho ||w||
 ### LinearSVR
 
 `LinearSVR` implements support vector regression for the case of a linear kernel. A support vector regression is a regression algorithm that builds a model by learning the error of the prediction for each sample. A linear kernel is a dot product between the samples.
-$$ \min_{w, \xi} \frac{1}{2} ||w||^2_2 + C \sum_{i=1}^n \xi_i $$
+$$\min_{w, \xi} \frac{1}{2} ||w||^2_2 + C \sum_{i=1}^n \xi_i$$
 
 ### KNeighborsRegressor
 
