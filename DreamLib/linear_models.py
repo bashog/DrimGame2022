@@ -17,6 +17,7 @@ from sklearn.model_selection import GridSearchCV
 
 # Data processing
 import pandas as pd
+import numpy as np
 
 # Plot
 import seaborn as sns
