@@ -138,10 +138,22 @@ By applying to all chronique we obtain the following plot.
 
 ![alt text](img/CHRTotale_12.png "Best model for 12 months prediction for CHR Total portfolio")
 
-### CHR2 - 12 months
+### CHR2 - 24 months
 
 ![alt text](img/CHR2_24.png "Best model for 24 months prediction for CHR2 portfolio")
 
-### CHR8 - 12 months
+### CHR8 - 24 months
 
 ![alt text](img/CHR8_24.png "Best model for 24 months prediction for CHR2 portfolio")
+
+### CHR2 - 36 months
+
+![alt text](img/CHR2_36.png "Best model for 36 months prediction for CHR2 portfolio")
+
+### CHR8 - 36 months
+
+![alt text](img/CHR8_36.png "Best model for 36 months prediction for CHR8 portfolio")
+
+### CHR Total - 36 months
+
+![alt text](img/CHRTOTALE_36.png "Best model for 36 months prediction for CHR Total portfolio")
