@@ -60,6 +60,7 @@ col_8_recur = ['mean_1', 'median_1', 'p5_1', 'p10_1', 'p25_1', 'p75_1', 'p90_1',
        'CD_ETA_CIV_1', 'CD_MOD_HABI_1', 'CD_PROF_1', 'CD_PROF_2',
        'CD_QUAL_VEH_1', 'PIB', 'Inflation', 'Tx_cho']
 
+
 col_8_sfm = ['mean_2', 'p5_2', 'p10_2', 'p25_2', 'p75_2', 'mean_3', 'median_3',
        'p5_3', 'p25_3', 'p95_3', 'mean_4', 'median_4', 'p5_4', 'p10_4',
        'p25_4', 'p75_4', 'p90_4', 'p95_4', 'Tx_cho']
