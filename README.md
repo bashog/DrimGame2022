@@ -75,29 +75,16 @@ $$
 `Ridge` regression addresses some of the problems of Ordinary Least Squares by imposing a penalty on the size of the coefficients. The ridge coefficients minimize a penalized residual sum of squares:
 $$\min_{w} || X w - y||_2^2 + \alpha ||w||_2^2$$
 
-The complexity parameter $\alpha \ge 0$ controls the amount of shrinkage: the larger the value of $\alpha$, the greater the amount of shrinkage and thus the coefficients become more robust to collinearity.
-
 ### Lasso
 
-The `Lasso` is a linear model that estimates sparse coefficients. It is useful in some contexts due to its tendency to prefer solutions with fewer non-zero coefficients, effectively reducing the number of features upon which the given solution is dependent. For this reason, Lasso and its variants are fundamental to the field of compressed sensing. Under certain conditions, it can recover the exact set of non-zero coefficients.
-
-Mathematically, it consists of a linear model with an added regularization term. The objective function to minimize is:
-
+The `Lasso` is a linear model that estimates sparse coefficients. It is useful in some contexts due to its tendency to prefer solutions with fewer non-zero coefficients, effectively reducing the number of features upon which the given solution is dependent.
 $$\min_{w} { \frac{1}{2n_{\text{samples}}} ||X w - y||_2 ^ 2 + \alpha ||w||_1}$$
 
 ### Elastic Net
 
-`ElasticNet` is a linear regression model trained with both $\ell_1$ and $\ell_2$-norm regularization of the coefficients. This combination allows for learning a sparse model where few of the weights are non-zero like Lasso, while still maintaining the regularization properties of Ridge. We control the convex combination of $\ell_1$ and $\ell_2$ using the l1_ratio parameter.
-
-Elastic-net is useful when there are multiple features that are correlated with one another. Lasso is likely to pick one of these at random, while elastic-net is likely to pick both.
-
-A practical advantage of trading-off between Lasso and Ridge is that it allows Elastic-Net to inherit some of Ridge’s stability under rotation.
-
-The objective function to minimize is in this case:
+`ElasticNet` is a linear regression model trained with both $\ell_1$ and $\ell_2$-norm regularization of the coefficients. Elastic-net is useful when there are multiple features that are correlated with one another.
 $$\min_{w} { \frac{1}{2n_{\text{samples}}} ||X w - y||_2 ^ 2 + \alpha \rho ||w||_1 +
 \frac{\alpha(1-\rho)}{2} ||w||_2 ^ 2}$$
-
-The class ElasticNetCV can be used to set the parameters alpha ($\alpha$) and l1_ratio ($\rho$) by cross-validation.
 
 ### XGBRegressor
 
@@ -105,17 +92,16 @@ The class ElasticNetCV can be used to set the parameters alpha ($\alpha$) and l1
 
 ### LinearSVR
 
-`LinearSVR` implements support vector regression for the case of a linear kernel. Support vector regression means that the target value is expected to be within the epsilon tube around the prediction. 
-
+`LinearSVR` implements support vector regression for the case of a linear kernel. A support vector regression is a regression algorithm that builds a model by learning the error of the prediction for each sample. A linear kernel is a dot product between the samples.
 $$ \min_{w, \xi} \frac{1}{2} ||w||^2_2 + C \sum_{i=1}^n \xi_i $$
 
 ### KNeighborsRegressor
 
-`KNeighborsRegressor` implements learning based on the k nearest neighbors of each query point, where $k$ is an integer value specified by the user. The output is the property value for the object. This value is the average of the values of its $k$ nearest neighbors.
+`KNeighborsRegressor` implements learning based on the k nearest neighbors of each query point, where $k$ is an integer value specified by the user. The output is the average of the values of its $k$ nearest neighbors.
 
 ### DecisionTreeRegressor
 
-`DecisionTreeRegressor` is a class capable of performing multi-output regression on a dataset. The goal is to create a model that predicts the value of a target variable by learning simple decision rules inferred from the data features.
+`DecisionTreeRegressor` is a model that predicts the value of a target variable by learning simple decision rules inferred from the data features.
 
 ### CatBoostRegressor
 
@@ -123,7 +109,7 @@ $$ \min_{w, \xi} \frac{1}{2} ||w||^2_2 + C \sum_{i=1}^n \xi_i $$
 
 ## Results found
 
-To laucnh a model the code has the following structure for example for `CHR2`, `12 months period`, `the forward sequential period` and `the linear SVR model` :
+To launch a model the code has the following structure for example for `CHR2`, `12 months period`, `the forward sequential period` and `the linear SVR model` :
 
 ```python
 chronique=b'CHR2'
